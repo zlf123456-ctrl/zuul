@@ -1,0 +1,17 @@
+
+server:
+  port: 9000
+zuul:
+  routes:
+    ServiceB:
+      path: /demo/**
+      url: http://localhost:9090/
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka
+spring:
+  application:
+    name: zuul-gateway
